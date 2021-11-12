@@ -34,6 +34,11 @@ The GitHub repo for this project should contain, at least, the following files:
 The analysis of the data described in the HTML file should contain the following
 sections:
 
+  * **Front matter:** This is the basic information of the project that should
+    appear at the beginning and should consist of the following items: title of
+    the project including at the end or as subtitle "FCB 2021", names of the
+    authors and date. Here the words _Front Matter_ **should not** be included
+    as section name.
   * **Abstract:** Summary of the question and the findings (max. 200 words).
   * **Introduction:** Description of the question and the data employed to answer it.
     Description of any steps taken, if any, previous to this R Markdown document,
@@ -57,13 +62,14 @@ made readily reproducible using a Makefile.
 
 The rubric to evaluate this project consists of the following items:
 
-* Have all members of the group made a sizeable number of commits to the GitHub repo?
+* Have all members of the group made a sizeable number of commits to the GitHub
+  repo?
 
 * Does the GitHub repo contain at least the analysed CSV files along with the
   `index.Rmd` file and the resulting `index.html`?
 
-* Does the R Markdown file `index.Rmd` run the analysis without errors and
-  generates the expected `index.html` file?
+* Does the R Markdown file `index.Rmd`, and any other additional code, run the
+  analysis without errors and generates the expected `index.html` file?
 
 * Does the analysis described in the resulting `index.html` file conform to
   the requested sectioning.
@@ -74,5 +80,14 @@ The rubric to evaluate this project consists of the following items:
 * Do the plots show some meaningful summary of the data? Are axes in plots
   labeled in plain language and large enough to read?
 
+* Does the R Markdown file `index.Rmd`, and any other additional R Markdown
+  file, consists of R code interspersed with Markdown text? Is the code easy
+  to read? Do the code instructions have a specific purpose?
+
+* Is the `index.html` and any other file forming the resulting website
+  hosted in a private URL with GitHub Pages?
+
 * Does the GitHub repo include a _Makefile_ that automatizes the entire analysis
   pipeline and generation of the final report in the `index.html` file?
+
+* Does the project as whole make an overall good impression?
