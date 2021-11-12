@@ -27,7 +27,7 @@ jobs:
       - name: Check for index.html
         run: RED='\033[0;31m'; NC='\033[0m' ; if [ -e index.Rmd ] || [ -e docs/index.html ] ; then exit 0 ; else { echo -e "${RED}MISSING FILE index.html${NC}" ; exit 1 ; } ; fi
       - name: Render index.html
-        run: if [ -e Makefile ] ; then { echo Running Makefile ; grep "^[^#[:space:]].*:" Makefile | sed 's/^[^#[:space:]].*: *//' | sed 's/ /\n/g' | egrep '.R|.Rmd|.py|.sh' | xargs touch ; make ; } else { if [ -e _site.yml ] ; then { Rscript -e 'rmarkdown::render_site()' ; } ; else { Rscript -e 'rmarkdown::render("index.Rmd")' ; } ; fi ; } ; fi
+        run: if [ -e Makefile ] ; then { echo Running Makefile ; grep "^[^#[:space:]].*:" Makefile | sed 's/^[^#[:space:]].*: *//' | sed 's/ /\n/g' | egrep '.R|.Rmd|.py|.sh' | xargs touch ; make ; } ; else { if [ -e _site.yml ] ; then { Rscript -e 'rmarkdown::render_site()' ; } ; else { Rscript -e 'rmarkdown::render("index.Rmd")' ; } ; fi ; } ; fi
       - name: Commit results to GitHub repo
         run: |
           git config --local user.email "actions@github.com"
