@@ -42,7 +42,7 @@ sections:
 
   * **Front matter:** This is the basic information of the project that should
     appear at the beginning and should consist of the following items: title of
-    the project including at the end or as subtitle "FCB 2021", names of the
+    the project including at the end or as subtitle "FCB 2022", names of the
     authors and date. Here the words _Front Matter_ **should not** be included
     as section name.
   * **Abstract:** Summary of the question and the findings (max. 200 words).
