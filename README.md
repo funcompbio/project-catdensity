@@ -1,6 +1,6 @@
 [![FCB-project-autograding](../../actions/workflows/fcb_autograding.yml/badge.svg)](../../actions?query=workflow%3AFCB-project-autograding)
 
-# Project COVID19 Catalonia population density - FCB 2023
+# Project COVID19 Catalonia population density - FCB 2024
 
 ## Summary
 
@@ -43,7 +43,7 @@ sections:
 
   * **Front matter:** This is the basic information of the project that should
     appear at the beginning and should consist of the following items: title of
-    the project including at the end or as subtitle "FCB 2023", names of the
+    the project including at the end or as subtitle "FCB 2024", names of the
     authors and date. Here the words _Front Matter_ **should not** be included
     as section name.
   * **Abstract:** Summary of the question and the findings (max. 200 words).
@@ -70,8 +70,8 @@ Markdown document and, ideally, made readily reproducible using a
 
 This assignment has to be submitted using GitHub Classroom. This
 means that you should have cloned the GitHub repo of this assignment from
-the organization account for FCB in the academic year 2023-24 at
-[https://github.com/funcompbio2023](https://github.com/funcompbio2023)
+the organization account for FCB in the academic year 2024-25 at
+[https://github.com/FBC-2024](https://github.com/FBC-2024)
 using the submission link provided at the FCB Moodle site.
 
 To complete your submission (see rubric below) one team member should fill up a
