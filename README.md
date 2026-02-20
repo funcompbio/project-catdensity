@@ -1,6 +1,6 @@
 [![FCB-project-autograding](../../actions/workflows/fcb_autograding.yml/badge.svg)](../../actions?query=workflow%3AFCB-project-autograding)
 
-# Project COVID19 Catalonia population density - FCB 2024
+# Project COVID19 Catalonia population density - FCB 2026
 
 ## Summary
 
@@ -15,11 +15,11 @@ You should use the following two datasets:
 1. Cases of COVID-19 in Catalonia, broken by sex and municipality, at the
 [Dades Obertes de Catalunya](http://governobert.gencat.cat/ca/dades_obertes) data portal.
 You should download the CSV file by going to this
-[link](https://analisi.transparenciacatalunya.cat/ca/Salut/Registre-de-casos-de-COVID-19-realitzats-a-Catalun/jj6z-iyrp), clicking on 'Exporta' and then on 'CSV'.
+[link](https://analisi.transparenciacatalunya.cat/Salut/Registre-de-casos-de-COVID-19-a-Catalunya-per-municipi/jj6z-iyrp), clicking on 'Exporta' and then on 'CSV'.
 
 2. Land indicators of Catalonia, including population density by municipality, at the
-[Dades Obertes de Catalunya](http://governobert.gencat.cat/ca/dades_obertes) data portal.
-You should download the CSV file by going to this
+[Dades Obertes de Catalunya](https://web.gencat.cat/ca/generalitat/dades-indicadors/dades-obertes)
+data portal. You should download the CSV file by going to this
 [link](https://analisi.transparenciacatalunya.cat/ca/Urbanisme-infraestructures/Dades-del-mapa-urban-stic-de-Catalunya/epsm-zskb),
 clicking on 'Exporta' and then on 'CSV'.
 
