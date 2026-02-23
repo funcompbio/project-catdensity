@@ -32,7 +32,9 @@ The GitHub repo for this project should contain, at least, the following files:
   * `index.html`: Resulting HTML output from processing (_knitting_) the file
     `index.Rmd`. This file (`index.html`) and other web-related files may also be
     located in a subdirectory called `docs`, when publishing it with GitHub pages,
-    but this `docs` subdirectory **cannot** have `.R` or `.Rmd` files.
+    but this `docs` subdirectory **cannot** have `.R` or `.Rmd` files, and both
+    `index.html` at the root of the repo and `index.html` in the `docs` subdirectory
+    should be identical.
   * The CSV files employed during the analysis.
   * This `README.md` file.
 
