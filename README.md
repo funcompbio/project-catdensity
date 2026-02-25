@@ -104,7 +104,7 @@ If you use AI tools, please take into account the following principles:
 This assignment has to be submitted using GitHub Classroom. This
 means that you should have cloned the GitHub repo of this assignment from
 the organization account for FCB in the academic year 2025-26 at
-[https://github.com/FBC-2026](https://github.com/FBC-2026)
+[https://github.com/FCB-2026](https://github.com/FCB-2026)
 using the submission link provided at the FCB Moodle site.
 
 To complete your submission (see rubric below) one team member should fill up a
