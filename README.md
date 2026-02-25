@@ -58,9 +58,10 @@ sections:
   * **Conclusions:** summary of the findings, limitations of the study, ways in
     which this type of study could be improved in the future.
   * **AI assistance:** description of any use of AI tools to help with the
-    analysis, including the specific prompts used and the output obtained from
-    those prompts. If you have not used any AI tool, you should explicitly state
-    that in this section.
+    analysis, including the specific prompts used, the output obtained from
+    those prompts, and if you directly accepted the output or you had to
+    modify it, and why. If you have not used any AI tool, you should explicitly
+    state that in this section.
   * **References:** bibliographic references.
 
 ## Methodology
