@@ -4,7 +4,8 @@
 
 ## Summary
 
-In this project you should analyse data to attempt answering the following question:
+In this project you should analyse data to attempt answering the following
+question:
 
 > Do COVID19 spread is affected by population density in Catalonia?
 
