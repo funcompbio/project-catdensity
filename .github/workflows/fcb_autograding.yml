@@ -9,7 +9,7 @@ jobs:
     timeout-minutes: 10
     strategy:
       matrix:
-        r-version: [4.4]
+        r-version: [4.5]
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
@@ -33,11 +33,29 @@ jobs:
       - name: Checking for index.Rmd
         run: RED='\033[0;31m'; NC='\033[0m' ; if [ -e index.Rmd ] ; then exit 0 ; else { echo -e "${RED}MISSING FILE index.Rmd${NC}" ; exit 1 ; } ; fi
       - name: Checking for index.html
-        run: RED='\033[0;31m'; NC='\033[0m' ; if [ -e index.html ] || [ -e docs/index.html ] ; then { if [ -e index.html ] && [ -e docs/index.html ] ; then { d=`diff index.html docs/index.html` ; if [ "$d" != "" ] ; then { echo -e "${RED}index.html and docs/index.html MUST BE IDENTICAL AND THEY ARE NOT${NC}" ; exit 1 ; } ; else { exit 0 ; } ; fi ; } ; else { exit 0 ; } ; fi ; } ; else { echo -e "${RED}MISSING FILE index.html${NC}" ; exit 1 ; } ; fi
+        run: |
+          RED='\033[0;31m'; NC='\033[0m'
+          if [ -e index.html ] || [ -e docs/index.html ] ; then
+            if [ -e index.html ] && [ -e docs/index.html ] ; then
+              md1=`md5sum index.html | cut -d ' ' -f 1`
+              md2=`md5sum docs/index.html | cut -d ' ' -f 1`
+              if [ "$md1" != "$md2" ] ; then
+                echo -e "${RED}index.html and docs/index.html MUST BE IDENTICAL AND THEY ARE NOT${NC}"
+                exit 1
+              else
+                exit 0
+              fi
+            else
+              exit 0
+            fi
+          else
+            echo -e "${RED}MISSING FILE index.html${NC}"
+            exit 1
+          fi
       - name: Checking for setwd() in Rmd files
         run: RED='\033[0;31m'; NC='\033[0m' ; nlswd=`grep -n setwd *.Rmd | cut -d ':' -f 1` ; if [ "$nlswd" != "" ] ; then { echo -e "${RED}YOU ARE CALLING setwd() IN AN .Rmd FILE, PLEASE DO NOT DO IT${NC}" ; exit 1 ; } ; else { exit 0 ; } ; fi
       - name: Checking for absolute paths in Rmd files
-        run: RED='\033[0;31m'; NC='\033[0m' ; nlswd=`egrep -n '"(/.*|[a-zA-Z]:\\)' *.Rmd | cut -d ':' -f 1` ; if [ "$nlswd" != "" ] ; then { echo -e "${RED}YOU ARE USING ABSOLUTE PATH(S) IN AN .Rmd FILE, PLEASE DO NOT DO IT${NC}" ; exit 1 ; } ; else { exit 0 ; } ; fi
+        run: RED='\033[0;31m'; NC='\033[0m' ; nlswd=`egrep -n '"/.*|"[a-zA-Z]:\\\' *.Rmd | cut -d ':' -f 1` ; if [ "$nlswd" != "" ] ; then { echo -e "${RED}YOU ARE USING ABSOLUTE PATH(S) IN AN .Rmd FILE, PLEASE DO NOT DO IT${NC}" ; exit 1 ; } ; else { exit 0 ; } ; fi
       - name: Checking for wrong language block definition in Rmd files
         run: RED='\033[0;31m'; NC='\033[0m' ; nlsR=`grep -n '\`\`\`{R' *.Rmd | cut -d ':' -f 1` ; if [ "$nlsR" != "" ] ; then { echo -e "${RED}YOU ARE USING \`\`\`{R} TO DEFINE R CODE BLOCKS IN AN .Rmd FILE, PLEASE USE LOWERCASE \`\`\`{r}${NC}" ; exit 1 ; } ; else { exit 0 ; } ; fi
       - name: Checking for the absence of R code
